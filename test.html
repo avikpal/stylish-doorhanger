@@ -1,5 +1,5 @@
 <html>
-<head>
+</head>
 <script>
 var menuID;
 function offerCake(window) {
@@ -8,13 +8,13 @@ function offerCake(window) {
       label: "Yes, please!",
       callback: function () {
         window.NativeWindow.toast.show("yum", "short");
-      }
+                            }
     },
     {
       label: "Not today",
       callback: function () {
         window.NativeWindow.toast.show("still hungry", "short");
-      }
+                            }
     }
   ];
   let message = "How about some cake?";
@@ -22,7 +22,7 @@ function offerCake(window) {
     persistence: 1
   };
   window.NativeWindow.doorhanger.show(message, "cake-request", buttons, window.BrowserApp.selectedTab.id, options);
-}
+                           }
 function loadIntoWindow(window) {
   if (!window)
     return;
@@ -35,12 +35,14 @@ function unloadFromWindow(window) {
     return;
   window.NativeWindow.menu.remove(menuID);  
 }
+
 function init(){
-document.addEventListener("DOMContentLoaded",alert("js working"),false);}
+document.addEventListener('DOMContentLoaded',loadIntoWindow(window),false);}
+//document.addEventListener('DOMContentLoaded',alert("Hi"),false);}
 window.onload = init;
 </script>
 </head>
 <body>
-<center><p>checking the interface</p></center>
+<center><p>Just checking the interface!!!</p></center>
 </body>
 </html>
