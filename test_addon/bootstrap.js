@@ -1,3 +1,4 @@
+//to check the current state of buttons
 var menuID;
 function offerCake(window) {
   let buttons = [
@@ -32,5 +33,4 @@ function unloadFromWindow(window) {
     return;
   window.NativeWindow.menu.remove(menuID);  
 }
-//document.addEventListener('DOMContentLoaded',loadIntoWindow(window),false);
 

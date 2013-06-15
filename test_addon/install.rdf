@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+    <Description about="urn:mozilla:install-manifest">
+        <em:id>1ec071c4-d577-11e2-91fe-f23c91aec05e</em:id>
+        <em:type>2</em:type>
+        <em:name>view the input elements</em:name>
+        <em:version>1.0</em:version>
+        <em:bootstrap>true</em:bootstrap>
+        <em:description>View non spinner input elements for Firefox for Android</em:description>
+        <em:creator>Avik Pal</em:creator>
+ 
+        <!-- Mobile Native -->
+        <em:targetApplication>
+            <Description>
+                <em:id>{aa3c5121-dab2-40e2-81ca-7ea25febc110}</em:id>
+            </Description>
+        </em:targetApplication>
+    </Description>
+</RDF>
