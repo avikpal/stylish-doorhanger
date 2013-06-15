@@ -1,4 +1,4 @@
-//to check the current state of buttons
+//to check the current state of input buttons
 var menuID;
 function offerCake(window) {
   let buttons = [
