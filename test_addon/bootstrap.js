@@ -2,6 +2,7 @@
 const Cc = Components.classes;
 const Ci = Components.interfaces;
 var menuID;
+
 function offerCake(window) {
   let buttons = [
     {
@@ -23,6 +24,7 @@ function offerCake(window) {
   };
   window.NativeWindow.doorhanger.show(message, "cake-request", buttons, window.BrowserApp.selectedTab.id, options);
 }
+
 function loadIntoWindow(window) {
   if (!window)
     return;
@@ -30,6 +32,7 @@ function loadIntoWindow(window) {
     offerCake(window);   
   });
 }
+
 function unloadFromWindow(window) {
   if (!window)
     return;
@@ -45,7 +48,7 @@ var windowListener = {
       loadIntoWindow(domWindow);
     }, false);
   },
-onCloseWindow: function(aWindow) {},
+onCloseWindow: function(aWindow) {alert("window closed"); },
 onWindowTitleChange: function(aWindow, aTitle) {}
 };
 
@@ -81,7 +84,6 @@ function install(aData, aReason) {
 
 function uninstall(aData, aReason) {
 }
-
 
 
 
