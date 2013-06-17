@@ -80,9 +80,11 @@ function shutdown(aData, aReason) {
 }
 
 function install(aData, aReason) {
+  if(aReason==ADDON_INSTALL){alert("Hurraaah!!!add on being installed");return;}
 }
 
 function uninstall(aData, aReason) {
+  if(aReason==ADDON_UNINSTALL){alert("alas!!! addon being uninstalled");return;}
 }
 
 
