@@ -6,7 +6,7 @@
         <em:name>view the input elements</em:name>
         <em:version>1.0</em:version>
         <em:bootstrap>true</em:bootstrap>
-        <em:description>View non spinner input elements for Firefox for Android</em:description>
+        <em:description>View buttons in Firefox for Android</em:description>
         <em:creator>Avik Pal</em:creator>
  
         <!-- Mobile Native -->
