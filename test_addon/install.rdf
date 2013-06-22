@@ -2,13 +2,13 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
     <Description about="urn:mozilla:install-manifest">
-        <em:id>myaddon@avikisme.org</em:id>
+        <em:id>ADDON.NAME@SOMEDOMAIN.ORG</em:id>
         <em:type>2</em:type>
-        <em:name>showdoorhanger</em:name>
+        <em:name>ADDON NAME</em:name>
         <em:version>1.0</em:version>
         <em:bootstrap>true</em:bootstrap>
-        <em:description>for showing doorhanger notifications</em:description>
-        <em:creator>avik</em:creator>
+        <em:description>ADDON DESCRIPTION</em:description>
+        <em:creator>YOUR NAME</em:creator>
 
         <!-- Mobile -->
         <em:targetApplication>

@@ -8,24 +8,26 @@ function isNativeUI() {
   return (Services.appinfo.ID == "{aa3c5121-dab2-40e2-81ca-7ea25febc110}");
 }
 
-function showToast(aWindow) {
-  aWindow.NativeWindow.toast.show("Showing you a toast", "short");
-}
-
 function showDoorhanger(aWindow) {
-
- //aWindow.NativeWindow.doorhanger.show("Showing a doorhanger with two button choices.", "doorhanger-test", buttons);
-aWindowNativeWindow.doorhanger.show("Hi", "hello", [ label: "ok" ], window.BrowserApp.selectedTab.id, {
-  inputs [
-    { type: "checkbox", id: "check", label: "Label" value: true },
-    { type: "input", id: "input", hint: "Enter something", value: "" },
-    { type: "password", id: "pass", hint: "Password!", value: "" },
-// HTML should work here...
-    { type: "label", id: "link: press me", value: "<b>Bold</b><a href='http://www.mozilla.org/en-US/'>Moz</a>" },
-    { type: "menulist", id: "menu", values: ["One", "Two"], label: "My values" },
-  ],
-});
+  let message = "Showing various input elements";
+  buttons = [
+    {
+      label: "ok",
+      callback: function() {
+        aWindow.NativeWindow.toast.show("its alright", "short");
+      }
+    } 
+    ];
+	
+  aWindow.NativeWindow.doorhanger.show(message,"doorhanger-test", buttons,awindow.BrowserApp.selectedTab.id,{
+  inputs [{ type: "checkbox", id: "check", label: "Label" value: true }]});
 }
+
+function copyLink(aWindow, aTarget) {
+  let url = aWindow.NativeWindow.contextmenus._getLinkURL(aTarget);
+  aWindow.NativeWindow.toast.show("Todo: copy > " + url, "short");
+}
+
 var gDoorhangerMenuId = null;
 
 function loadIntoWindow(window) {
@@ -33,8 +35,7 @@ function loadIntoWindow(window) {
     return;
 
   if (isNativeUI()) {
-        gDoorhangerMenuId = window.NativeWindow.menu.add("Show Doorhanger", null, function() { showDoorhanger(window); });
-   
+    gDoorhangerMenuId = window.NativeWindow.menu.add("show inputs", null, function() { showDoorhanger(window); });
   }
 }
 
@@ -43,8 +44,8 @@ function unloadFromWindow(window) {
     return;
 
   if (isNativeUI()) {
-     window.NativeWindow.menu.remove(gDoorhangerMenuId);
-    }
+    window.NativeWindow.menu.remove(gDoorhangerMenuId);
+  }
 }
 
 

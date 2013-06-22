@@ -111,15 +111,7 @@ function shutdown(aData, aReason) {
 }
 
 function install(aData, aReason) {
-<<<<<<< HEAD
 }
 
 function uninstall(aData, aReason) {
-=======
-  if(aReason==ADDON_INSTALL){return;}
-}
-
-function uninstall(aData, aReason) {
-  if(aReason==ADDON_UNINSTALL){return;}
->>>>>>> 07081de101586756faa4c479c850f811c82a0d1d
 }
