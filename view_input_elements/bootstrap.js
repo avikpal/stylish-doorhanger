@@ -8,24 +8,9 @@ function isNativeUI() {
   return (Services.appinfo.ID == "{aa3c5121-dab2-40e2-81ca-7ea25febc110}");
 }
 
-function showDoorhanger(aWindow) {
-  let message = "Showing various input elements";
-  buttons = [
-    {
-      label: "ok",
-      callback: function() {
-        aWindow.NativeWindow.toast.show("its alright", "short");
-      }
-    } 
-    ];
-	
-  aWindow.NativeWindow.doorhanger.show(message,"doorhanger-test", buttons,awindow.BrowserApp.selectedTab.id,{
-  inputs [{ type: "checkbox", id: "check", label: "Label" value: true }]});
-}
 
-function copyLink(aWindow, aTarget) {
-  let url = aWindow.NativeWindow.contextmenus._getLinkURL(aTarget);
-  aWindow.NativeWindow.toast.show("Todo: copy > " + url, "short");
+function showDoorhanger(aWindow) {
+  aWindow.NativeWindow.doorhanger.show("Showing input elements","doorhanger-test",[label:"ok"],aWindow.BrowserApp.selectedTab.id,{inputs [{ type: "checkbox", id: "check", label: "Label" value: true }]});    
 }
 
 var gDoorhangerMenuId = null;
