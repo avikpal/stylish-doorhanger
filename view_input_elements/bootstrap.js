@@ -13,18 +13,7 @@ function showToast(aWindow) {
 }
 
 function showDoorhanger(aWindow) {
-  buttons = [
-    {
-      label: "Button 1",
-      callback: function() {
-        aWindow.NativeWindow.toast.show("Button 1 was tapped", "short");
-      }
-    } , {
-      label: "Button 2",
-      callback: function() {
-        aWindow.NativeWindow.toast.show("Button 2 was tapped", "short");
-      }
-    }];
+
  //aWindow.NativeWindow.doorhanger.show("Showing a doorhanger with two button choices.", "doorhanger-test", buttons);
 aWindowNativeWindow.doorhanger.show("Hi", "hello", [ label: "ok" ], window.BrowserApp.selectedTab.id, {
   inputs [
@@ -37,24 +26,15 @@ aWindowNativeWindow.doorhanger.show("Hi", "hello", [ label: "ok" ], window.Brows
   ],
 });
 }
-
-function copyLink(aWindow, aTarget) {
-  let url = aWindow.NativeWindow.contextmenus._getLinkURL(aTarget);
-  aWindow.NativeWindow.toast.show("Todo: copy > " + url, "short");
-}
-
-var gToastMenuId = null;
 var gDoorhangerMenuId = null;
-var gContextMenuId = null;
 
 function loadIntoWindow(window) {
   if (!window)
     return;
 
   if (isNativeUI()) {
-    //gToastMenuId = window.NativeWindow.menu.add("Show Toast", null, function() { showToast(window); });
-    gDoorhangerMenuId = window.NativeWindow.menu.add("Show Doorhanger", null, function() { showDoorhanger(window); });
-    //gContextMenuId = window.NativeWindow.contextmenus.add("Copy Link", window.NativeWindow.contextmenus.linkOpenableContext, function(aTarget) { copyLink(window, aTarget); });
+        gDoorhangerMenuId = window.NativeWindow.menu.add("Show Doorhanger", null, function() { showDoorhanger(window); });
+   
   }
 }
 
@@ -63,10 +43,8 @@ function unloadFromWindow(window) {
     return;
 
   if (isNativeUI()) {
-    window.NativeWindow.menu.remove(gToastMenuId);
-    window.NativeWindow.menu.remove(gDoorhangerMenuId);
-    window.NativeWindow.contextmenus.remove(gContextMenuId);
-  }
+     window.NativeWindow.menu.remove(gDoorhangerMenuId);
+    }
 }
 
 
