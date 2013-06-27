@@ -1,3 +1,4 @@
+//code snippet to show  checkbox and other non spinner input elements
 NativeWindow.doorhanger.show("Hi", "hello", [ label: "ok" ], window.BrowserApp.selectedTab.id, {
   inputs [
     { type: "checkbox", id: "check", label: "Label" value: true },
