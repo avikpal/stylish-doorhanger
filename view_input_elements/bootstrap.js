@@ -10,7 +10,7 @@ function isNativeUI() {
 
 
 function showDoorhanger(aWindow) {
-  aWindow.NativeWindow.doorhanger.show("Showing input elements","doorhanger-test",[label:"ok"],aWindow.BrowserApp.selectedTab.id,{inputs [{ type: "checkbox", id: "check", label: "Label" value: true }]});    
+  aWindow.NativeWindow.doorhanger.show("Showing input elements","doorhanger-test",[{label:"ok"}],aWindow.BrowserApp.selectedTab.id,{inputs [{ type: "checkbox", id: "check", label: "Label" value: true }]});    
 }
 
 var gDoorhangerMenuId = null;
